@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Examen_BGlobal.Models.Vehiculo>
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Ingresar nuevo vehículo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Patente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Patente)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Marca)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Modelo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Empleado)
+    </td>
+    <td>
+        @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
